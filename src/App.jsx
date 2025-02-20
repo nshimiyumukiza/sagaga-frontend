@@ -1,9 +1,15 @@
-import React from 'react'
+import { BrowserRouter,Routes,Route } from "react-router"
 
 const App = () => {
   return (
     <div>
-    <h1>erneste</h1>
+    <BrowserRouter>
+    <Routes>
+      <Route>
+        
+      </Route>
+    </Routes>
+    </BrowserRouter>
 
     </div>
   )
