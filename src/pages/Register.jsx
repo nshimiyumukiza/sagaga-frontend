@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router";
+import axios from "axios";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -11,9 +12,11 @@ const Register = () => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+   const responsive = await axios.post("http://localhost:3000/users",formData)
+    console.log(responsive);
+    alert(responsive.data.message)
   };
   return (
     <div className="bg-gray-100 flex justify-center">
